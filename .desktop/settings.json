@@ -47,7 +47,10 @@
     "dependencies": {},
     "packageJsonFields": {
         "description": "My Meteor App",
-        "author": "Me, Myself And I",
+        "author": {
+            "name": "obonyojimmy",
+            "email": "cliffjimmy27@gmail.com"
+        },
         "private": true
     },
     "builderOptions": {
@@ -83,6 +86,13 @@
                 "width": 480,
                 "height": 300
             }
+        },
+        "linux": {
+            "target": ["AppImage"],
+            "synopsis": "simple meteor demo",
+            "category": "Science",
+            "maintainer": "obonyojimmy",
+            "icon": ".desktop/assets/meteor.png"
         }
     },
     "packagerOptions": {

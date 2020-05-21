@@ -1,3 +1,7 @@
 node_modules/
+packages/
+.desktop-installer/
 
+meteor.log
+dev.env.json
 version.desktop

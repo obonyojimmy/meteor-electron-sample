@@ -7,7 +7,8 @@
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "desktop": "meteor-desktop"
+    "desktop": "meteor-desktop",
+    "build:electron": "meteor npm run desktop -- build-installer -b --meteor-settings dev.env.json http://localhost:3000"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
