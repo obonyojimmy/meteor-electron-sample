@@ -2,7 +2,8 @@
   "name": "react-electron",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "start": "meteor run --mobile-server=http://localhost:3000",
+    "start:desktop": "meteor npm run desktop",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
