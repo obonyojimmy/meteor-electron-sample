@@ -1,0 +1,29 @@
+{
+  "name": "react-electron",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "desktop": "meteor-desktop"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "meteor-node-stubs": "^1.0.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "electron": "6.1.7",
+    "electron-builder": "21.2.0",
+    "meteor-desktop": "^2.2.5"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}
