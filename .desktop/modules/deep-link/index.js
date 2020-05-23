@@ -65,14 +65,17 @@ export default class DeepLink {
     protocol.registerHttpProtocol(protocolPrefix, (req, cb) => {
       const url = req.url
       const msg = url.substr(protocolPrefix.length + 3)
-      this.module.call('challegeCode', msg);
+      this.module.send('challegeCode', msg);
+      this.eventsBus.on('loadingFinished', ()=> {
+        this.module.send('challegeCode', msg)
+      })
       log(`${msg} Sent`)
     }, (err) => {
       if (!err) {
         log.info(`protocol ${protocolPrefix}:// registered`)
-        this.eventsBus.on('loadingFinished', ()=> {
-          this.module.send('challegeCode', 'init')
-        })
+        // this.eventsBus.on('loadingFinished', ()=> {
+        //  this.module.send('challegeCode', 'init')
+        // })
       } else {
         log.error(`could not register protocol ${protocolPrefix}://`, err)
       }

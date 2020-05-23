@@ -18,6 +18,9 @@ export const App = () => {
     Desktop.once('deep-link', 'challegeCode', (event, arg) => {
       console.log('challegeCode', arg)
     })
+  } else {
+    const secret = 'jimmy-cliff'
+    window.open(`meteordemo://${secret}`)
   }
 
   return (
