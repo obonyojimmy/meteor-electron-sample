@@ -58,6 +58,15 @@
         "appId": "meteor.app",
         "productName": "My Meteor App",
         "compression": "maximum",
+        "protocols": [
+            {
+              "name": "meteor-demo",
+              "role": "Viewer",
+              "schemes": [
+                "meteordemo"
+              ]
+            }
+        ],
         "win": {
             "target": "nsis"
         },
@@ -88,7 +97,7 @@
             }
         },
         "linux": {
-            "target": ["AppImage"],
+            "target": ["AppImage", "deb"],
             "synopsis": "simple meteor demo",
             "category": "Science",
             "maintainer": "obonyojimmy",
